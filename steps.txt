@@ -1,0 +1,36 @@
+# install library to create env
+pip install virtualenv
+
+#create an environemtn
+python -m venv .amzenv
+
+#activate environment so that the terminal switches to the new env
+.amzenv\Scripts\activate
+
+#install the library scrapy for ht project
+pip install scrapy    
+
+#create a folder (amazon_scraper) with a basic Scrapy project structure.
+scrapy startproject amazon_scraper
+
+# navige to the spider folder for the terminal
+cd amazon_scraper/amazon_scraper/spiders/ 
+
+#creatin a spider
+scrapy genspider amazonspider www.amazon.com
+
+#
+pip install ipython
+
+
+#create a shell inside scrapy.cfg
+shell = ipython
+
+#
+scrapy shell
+
+#
+fetch('https://www.amazon.com/s?k=pendrive')
+
+# extracts all product links insed website
+response.css('a.a-link-normal.s-no-outline::attr(href)').getall()
